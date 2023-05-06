@@ -31,6 +31,14 @@ jobs:
         with:
           version: v3.11.1
 
+      - name: Add dependency chart repos
+        run: |
+          helm repo add bitnami https://charts.bitnami.com/bitnami
+
+      - name: Install Chart dependencies
+        run: |
+          cd charts/nextcloud && helm dependency build
+
       - name: Set up kube-score
         run: |
           mkdir /tmp/bin
