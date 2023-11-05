@@ -155,6 +155,7 @@ The following table lists the configurable parameters of the nextcloud chart and
 | `redis.auth.existingSecretPasswordKey`                     | Password key to be retrieved from existing secret                                            | `''`                       |
 | `systemCron.enabled`                                                 | Whether to enable/disable system cronjob that runs inside the main pod                 | `false`                                      |
 | `cronjob.enabled`                                          | Whether to enable/disable cron jobs sidecar                                                  | `false`                    |
+| `cronjob.asSidecar`                                        | Run cronjob as sidecar `true`or inside the main pod `false`                                  | `true`                     |
 | `cronjob.lifecycle.postStartCommand`                       | Specify deployment lifecycle hook postStartCommand for the cron jobs sidecar                 | `nil`                      |
 | `cronjob.lifecycle.preStopCommand`                         | Specify deployment lifecycle hook preStopCommand for the cron jobs sidecar                   | `nil`                      |
 | `cronjob.resources`                                        | CPU/Memory resource requests/limits for the cron jobs sidecar                                | `{}`                       |
