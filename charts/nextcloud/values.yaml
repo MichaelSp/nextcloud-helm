@@ -345,19 +345,11 @@ redis:
     existingSecretPasswordKey: ""
 
 
-systemCron: # run a system cron job inside the nextcloud image
-  # https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/background_jobs_configuration.html#cron
-  enabled: false
-
-
 ## Cronjob to execute Nextcloud background tasks
 ## ref: https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/background_jobs_configuration.html#cron
 ##
 cronjob:
-  enabled: true
-  # If set to `true` the cron will run inside a side-car container
-  # If set to `false` it will run in the same container as the nextcloud server
-  asSidecar: true
+  enabled: false
 
   ## Cronjob sidecar resource requests and limits
   ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
@@ -482,7 +474,7 @@ metrics:
   # Use API token if set, otherwise fall back to password authentication
   # https://github.com/xperimental/nextcloud-exporter#token-authentication
   # Currently you still need to set the token manually in your nextcloud install
-  token: ""
+  token: "auto-generate"
   timeout: 5s
   # if set to true, exporter skips certificate verification of Nextcloud server.
   tlsSkipVerify: false
