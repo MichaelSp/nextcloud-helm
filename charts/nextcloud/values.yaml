@@ -27,6 +27,7 @@ ingress:
   #  nginx.ingress.kubernetes.io/proxy-body-size: 4G
   #  kubernetes.io/tls-acme: "true"
   #  cert-manager.io/cluster-issuer: letsencrypt-prod
+  #  # Keep this in sync with the README.md:
   #  nginx.ingress.kubernetes.io/server-snippet: |-
   #    server_tokens off;
   #    proxy_hide_header X-Powered-By;
@@ -78,12 +79,12 @@ nextcloud:
   existingSecret:
     enabled: false
     # secretName: nameofsecret
-    # usernameKey: nextcloud-username
-    # passwordKey: nextcloud-password
-    # tokenKey: nextcloud-token
-    # smtpUsernameKey: smtp-username
-    # smtpPasswordKey: smtp-password
-    # smtpHostKey: smtp-host
+    usernameKey: nextcloud-username
+    passwordKey: nextcloud-password
+    tokenKey: nextcloud-token
+    smtpUsernameKey: smtp-username
+    smtpPasswordKey: smtp-password
+    smtpHostKey: smtp-host
   update: 0
   # If web server is not binding default port, you can define it
   containerPort: 80
@@ -252,7 +253,7 @@ externalDatabase:
   user: nextcloud
 
   ## Database password
-  password:
+  password: ""
 
   ## Database name
   database: nextcloud
@@ -261,8 +262,8 @@ externalDatabase:
   existingSecret:
     enabled: false
     # secretName: nameofsecret
-    # usernameKey: db-username
-    # passwordKey: db-password
+    usernameKey: db-username
+    passwordKey: db-password
     # hostKey: db-hostname-or-ip
     # databaseKey: db-name
 
@@ -344,19 +345,11 @@ redis:
     existingSecretPasswordKey: ""
 
 
-systemCron: # run a system cron job inside the nextcloud image
-  # https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/background_jobs_configuration.html#cron
-  enabled: false
-
-
 ## Cronjob to execute Nextcloud background tasks
 ## ref: https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/background_jobs_configuration.html#cron
 ##
 cronjob:
-  enabled: true
-  # If set to `true` the cron will run inside a side-car container
-  # If set to `false` it will run in the same container as the nextcloud server
-  asSidecar: true
+  enabled: false
 
   ## Cronjob sidecar resource requests and limits
   ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
@@ -481,7 +474,7 @@ metrics:
   # Use API token if set, otherwise fall back to password authentication
   # https://github.com/xperimental/nextcloud-exporter#token-authentication
   # Currently you still need to set the token manually in your nextcloud install
-  token: ""
+  token: "auto-generate"
   timeout: 5s
   # if set to true, exporter skips certificate verification of Nextcloud server.
   tlsSkipVerify: false
