@@ -1,6 +1,6 @@
 apiVersion: v2
 name: nextcloud
-version: 6.0.4-build.1
+version: 6.0.4-build.3
 appVersion: 30.0.0
 description: A file sharing server that puts the control and security of your own data back into your hands.
 keywords:
@@ -27,7 +27,7 @@ dependencies:
     repository: oci://registry-1.docker.io/bitnamicharts
     condition: postgresql.enabled
   - name: mariadb
-    version: 18.2.0
+    version: 18.2.6
     repository: oci://registry-1.docker.io/bitnamicharts
     condition: mariadb.enabled
   - name: redis
