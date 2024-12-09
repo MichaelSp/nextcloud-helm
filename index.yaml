@@ -2,6 +2,47 @@ apiVersion: v1
 entries:
   nextcloud:
   - apiVersion: v2
+    appVersion: 30.0.2
+    created: "2024-12-09T12:07:43.353776182Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 16.0.3
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 19.1.0
+    - condition: redis.enabled
+      name: redis
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 20.2.1
+    description: A file sharing server that puts the control and security of your
+      own data back into your hands.
+    digest: 6ebdaffc1a45f0c6b97b086c744f918fefc6419af3e5c936cd19c855825345df
+    home: https://nextcloud.com/
+    icon: https://cdn.rawgit.com/docker-library/docs/defa5ffc7123177acd60ddef6e16bddf694cc35f/nextcloud/logo.svg
+    keywords:
+    - nextcloud
+    - storage
+    - http
+    - web
+    - php
+    maintainers:
+    - email: skjnldsv@protonmail.com
+      name: skjnldsv
+    - email: christian.ingenhaag@googlemail.com
+      name: chrisingenhaag
+    - email: jeff@billimek.com
+      name: billimek
+    name: nextcloud
+    sources:
+    - https://github.com/nextcloud/helm
+    - https://github.com/nextcloud/docker
+    urls:
+    - https://github.com/MichaelSp/nextcloud-helm/releases/download/nextcloud-6.3.0-patch.1/nextcloud-6.3.0-patch.1.tgz
+    version: 6.3.0-patch.1
+  - apiVersion: v2
     appVersion: 30.0.1
     created: "2024-10-20T07:58:18.539706589Z"
     dependencies:
@@ -4343,4 +4384,4 @@ entries:
     urls:
     - https://github.com/nextcloud/helm/releases/download/nextcloud-2.0.2/nextcloud-2.0.2.tgz
     version: 2.0.2
-generated: "2024-10-20T07:58:18.540045645Z"
+generated: "2024-12-09T12:07:43.35416516Z"
