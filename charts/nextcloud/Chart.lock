@@ -1,7 +1,7 @@
 dependencies:
 - name: postgresql
   repository: oci://registry-1.docker.io/bitnamicharts
-  version: 16.0.3
+  version: 16.3.5
 - name: mariadb
   repository: oci://registry-1.docker.io/bitnamicharts
   version: 19.1.0
@@ -11,5 +11,5 @@ dependencies:
 - name: collabora-online
   repository: https://collaboraonline.github.io/online
   version: 1.1.20
-digest: sha256:97c4fa6bb7fac4ee45dc08f5dff094280e79fefb3cf222cb6e198cf5efe9a2ba
-generated: "2024-12-23T15:45:30.659899+01:00"
+digest: sha256:700e240c64e8e78b43c08fd0bc690c0bbedb703d38dff41939cdef57cf7a38ae
+generated: "2025-01-03T13:43:14.430361757Z"
