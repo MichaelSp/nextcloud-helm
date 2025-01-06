@@ -287,6 +287,8 @@ nextcloud:
   #      path: "/nextcloud_data"
   #      readOnly: false
   extraVolumeMounts:
+    - name: extraMount
+      mountPath: /just/for/the/unit/test
   #  - name: nfs
   #    mountPath: "/legacy_data"
 
