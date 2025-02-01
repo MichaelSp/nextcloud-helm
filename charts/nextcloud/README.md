@@ -320,8 +320,8 @@ Here are all the values you can currently configure in this helm chart to config
 | Parameter                                       | Description                                                           | Default     |
 |-------------------------------------------------|-----------------------------------------------------------------------|-------------|
 | `nextcloud.objectStore.s3.enabled`              | enable configuring S3 as a primary object store                       | `false`     |
-| `nextcloud.objectStore.s3.accessKey`            | accessKeyID for authing to S3, ignored if using existinSecret         | `''`        |
-| `nextcloud.objectStore.s3.secretKey`            | secretAccessKey for authing to S3, ignored if using existinSecret     | `''`        |
+| `nextcloud.objectStore.s3.accessKey`            | accessKeyID for authing to S3, ignored if using existingSecret        | `''`        |
+| `nextcloud.objectStore.s3.secretKey`            | secretAccessKey for authing to S3, ignored if using existingSecret    | `''`        |
 | `nextcloud.objectStore.s3.legacyAuth`           | use legacy authentication for S3                                      | `false`     |
 | `nextcloud.objectStore.s3.host`                 | endpoint URL to connect to. Only required if not using AWS            | `''`        |
 | `nextcloud.objectStore.s3.ssl`                  | Use TLS connection when connecting to S3                              | `true`      |
@@ -546,6 +546,8 @@ We include an optional external preview provider from [h2non/imaginary](https://
 | `imaginary.image.pullSecrets`          | Imaginary image pull secrets                                                            | `nil`             |
 | `imaginary.podAnnotations`             | Additional annotations for imaginary                                                    | `{}`              |
 | `imaginary.podLabels`                  | Additional labels for imaginary                                                         | `{}`              |
+| `imaginary.nodeSelector`               | Imaginary pod nodeSelector                                                                | `{}`              |
+| `imaginary.tolerations`                | Imaginary pod tolerations                                                | `[]`              |
 | `imaginary.resources`                  | imaginary resources                                                                     | `{}`              |
 | `imaginary.securityContext`            | Optional security context for the Imaginary container                                   | `nil`             |
 | `imaginary.podSecurityContext`         | Optional security context for the Imaginary pod (applies to all containers in the pod)  | `nil`             |

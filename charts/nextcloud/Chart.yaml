@@ -1,7 +1,8 @@
 apiVersion: v2
 name: nextcloud
-version: 6.5.2-build.3
-appVersion: 30.0.4
+version: 6.6.3
+# renovate: image=docker.io/library/nextcloud
+appVersion: 30.0.5
 description: A file sharing server that puts the control and security of your own data back into your hands.
 keywords:
 - nextcloud
@@ -15,12 +16,16 @@ sources:
 - https://github.com/nextcloud/helm
 - https://github.com/nextcloud/docker
 maintainers:
-- name: skjnldsv
-  email: skjnldsv@protonmail.com
-- name: chrisingenhaag
-  email: christian.ingenhaag@googlemail.com
-- name: billimek
-  email: jeff@billimek.com
+  - name: skjnldsv
+    email: skjnldsv@protonmail.com
+  - name: chrisingenhaag
+    email: christian.ingenhaag@googlemail.com
+  - name: billimek
+    email: jeff@billimek.com
+  - name: WrenIX
+    url: https://wrenix.eu
+  - name: jessebot
+    url: https://jessebot.work
 dependencies:
 - name: postgresql
   version: 16.3.5
