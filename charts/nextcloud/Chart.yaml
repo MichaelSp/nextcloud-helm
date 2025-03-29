@@ -1,6 +1,6 @@
 apiVersion: v2
 name: nextcloud
-version: 6.6.9
+version: 6.6.9-build.1
 # renovate: image=docker.io/library/nextcloud
 appVersion: 30.0.6
 description: A file sharing server that puts the control and security of your own data back into your hands.
@@ -36,7 +36,7 @@ dependencies:
   repository: oci://registry-1.docker.io/bitnamicharts
   condition: mariadb.enabled
 - name: redis
-  version: 20.6.1
+  version: 20.11.4
   repository: oci://registry-1.docker.io/bitnamicharts
   condition: redis.enabled
 - name: collabora-online
