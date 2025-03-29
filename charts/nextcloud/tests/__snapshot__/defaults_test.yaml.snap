@@ -102,6 +102,8 @@ defaults:
                 - mountPath: /var/www/html/themes
                   name: nextcloud-main
                   subPath: themes
+                - mountPath: /just/for/the/unit/test
+                  name: extraMount
           securityContext:
             fsGroup: 33
           volumes:
