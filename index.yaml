@@ -52,6 +52,56 @@ entries:
     - https://github.com/MichaelSp/nextcloud-helm/releases/download/nextcloud-6.6.10/nextcloud-6.6.10.tgz
     version: 6.6.10
   - apiVersion: v2
+    appVersion: 30.0.8
+    created: "2025-04-20T12:33:49.061747094Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 16.3.5
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 19.1.0
+    - condition: redis.enabled
+      name: redis
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 20.6.1
+    - alias: collabora
+      condition: collabora.enabled
+      name: collabora-online
+      repository: https://collaboraonline.github.io/online
+      version: 1.1.37
+    description: A file sharing server that puts the control and security of your
+      own data back into your hands.
+    digest: 3eb8102069cb6c0865d1e70d69d3c77fd972e04dd4d1f4896df9732785770b72
+    home: https://nextcloud.com/
+    icon: https://cdn.rawgit.com/docker-library/docs/defa5ffc7123177acd60ddef6e16bddf694cc35f/nextcloud/logo.svg
+    keywords:
+    - nextcloud
+    - storage
+    - http
+    - web
+    - php
+    maintainers:
+    - email: skjnldsv@protonmail.com
+      name: skjnldsv
+    - email: christian.ingenhaag@googlemail.com
+      name: chrisingenhaag
+    - email: jeff@billimek.com
+      name: billimek
+    - name: WrenIX
+      url: https://wrenix.eu
+    - name: jessebot
+      url: https://jessebot.work
+    name: nextcloud
+    sources:
+    - https://github.com/nextcloud/helm
+    - https://github.com/nextcloud/docker
+    urls:
+    - https://github.com/MichaelSp/nextcloud-helm/releases/download/nextcloud-6.6.10-build2/nextcloud-6.6.10-build2.tgz
+    version: 6.6.10-build2
+  - apiVersion: v2
     appVersion: 30.0.6
     created: "2025-04-20T12:29:12.785463803Z"
     dependencies:
@@ -4959,4 +5009,4 @@ entries:
     urls:
     - https://github.com/nextcloud/helm/releases/download/nextcloud-2.0.2/nextcloud-2.0.2.tgz
     version: 2.0.2
-generated: "2025-04-20T12:29:12.785902443Z"
+generated: "2025-04-20T12:33:49.062142601Z"
